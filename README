@@ -1,5 +1,10 @@
 Spur
 ====
+
+Spur means:
+- anything that goads, impels, or urges, as to action, speed, or achievement. 
+- a short branch track leading from the main track, and connected with it at one end only
+
 This is a barebones starter web application to get new ideas and projects quickly off the ground.  Similar to the Rails way of providing an opinionated framework for the web application, Spur is an opinionated starter application.  Several plugin and structure decisions are made to cover the foundation of the application, effectivly removing the "CRUD" of application startup.
 
 The initial idea is to provide:
@@ -30,4 +35,11 @@ TODO
 
 Installation Instructions
 =========================
-None yet!
+1) Clone project
+2) Rename/move
+3) Push to github or whatever source control
+4) Create/modify database.yml for your app
+5) rake db:create
+6) rake db:migrate
+7) rake db:fixtures:load
+8) ?
