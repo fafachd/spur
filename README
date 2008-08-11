@@ -11,9 +11,9 @@ The initial idea is to provide:
 
 Plugins Included
 ================
-- shoulda
-- restful_authentication
-- make_resourceful
+- shoulda -> done
+- restful_authentication -> done
+- make_resourceful -> (Which one?)
 - others?
 
 Installation Instructions
