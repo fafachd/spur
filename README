@@ -43,3 +43,10 @@ Installation Instructions
 6) rake db:migrate
 7) rake db:fixtures:load
 8) ?
+
+
+Other Notes
+===========
+1) Might have to configure mail settings for your needs for authentication emails to work
+2) Things to replace: index.html.haml
+

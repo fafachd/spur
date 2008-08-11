@@ -1,0 +1,25 @@
+%html
+  %head
+    = stylesheet_link_tag 'spur'
+  
+  %body
+    #header
+      .header
+        %p Spur
+        .links
+          = link_to 'Home', root_path
+          = link_to 'Login', login_path
+        .clear
+      .clear
+
+    #body
+      .body
+        = yield
+      .clear
+      
+    #footer
+      .footer
+        %p
+          Footer stuff here
+      .clear
+      
