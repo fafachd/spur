@@ -34,8 +34,20 @@ ActionController::Routing::Routes.draw do |map|
   # map.root :controller => "welcome"
 
   # See how all your routes lay out with "rake routes"
+  
+  map.root :controller => "pages", :action => 'index'
+  
+  # Site pages
+  map.home '', :controller => 'pages', :action => 'index'
+  
+  # Sitemap
+  map.sitemap '/sitemap.xml', :controller => 'sitemap', :action => 'index'
+  
+  # Set the default route for static pages
+  map.page '/:action', :controller => 'pages'
 
   # Install the default routes as the lowest priority.
+  map.connect ':controller/:action'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
