@@ -15,6 +15,7 @@ Plugins Included
 - restful_authentication -> done
 - make_resourceful -> (Which one?)
 - exception_notification -> done
+- haml -> done
 - others?
 
 Installation Instructions

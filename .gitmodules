@@ -7,3 +7,6 @@
 [submodule "vendor/plugins/exception_notification"]
 	path = vendor/plugins/exception_notification
 	url = git://github.com/rails/exception_notification.git
+[submodule "vendor/plugins/haml"]
+	path = vendor/plugins/haml
+	url = git://github.com/nex3/haml.git
