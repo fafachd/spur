@@ -10,3 +10,6 @@
 [submodule "vendor/plugins/haml"]
 	path = vendor/plugins/haml
 	url = git://github.com/nex3/haml.git
+[submodule "vendor/plugins/make_resourceful"]
+	path = vendor/plugins/make_resourceful
+	url = git://github.com/adzap/make_resourceful.git

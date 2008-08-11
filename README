@@ -13,10 +13,16 @@ Plugins Included
 ================
 - shoulda -> done
 - restful_authentication -> done
-- make_resourceful -> (Which one?)
+- make_resourceful -> done
 - exception_notification -> done
 - haml -> done
 - others?
+
+TODO
+====
+1) Get login setup w/ default users
+2) Static page infrastructure
+3) Think of more things to do and put them here 
 
 Installation Instructions
 =========================
