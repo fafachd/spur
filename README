@@ -12,10 +12,11 @@ The initial idea is to provide:
 Plugins Included
 ================
 - shoulda -> done
-- restful_authentication -> done
+- restful-authentication -> done (but had to rename to restful_authentication)
 - make_resourceful -> done
 - exception_notification -> done
 - haml -> done
+- aasm -> done
 - others?
 
 NOTES
@@ -23,11 +24,9 @@ NOTES
 Generic controller "pages" created
 "Home" page is pages/index
 
-
 TODO
 ====
-1) Get login setup w/ default users
-2) Think of more things to do and put them here 
+1) Think of more things to do and put them here 
 
 Installation Instructions
 =========================

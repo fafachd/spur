@@ -13,3 +13,6 @@
 [submodule "vendor/plugins/make_resourceful"]
 	path = vendor/plugins/make_resourceful
 	url = git://github.com/adzap/make_resourceful.git
+[submodule "vendor/plugins/aasm"]
+	path = vendor/plugins/aasm
+	url = git://github.com/rubyist/aasm.git
