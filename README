@@ -23,6 +23,14 @@ Plugins Included
 - haml
 - aasm
 
+TODO
+====
+1) Remember Me checkbox
+2) Forgot password
+3) User Maintenance (for user)
+4) Users Maintenance (for admin)
+5) Change password (part of 3/4?)
+
 New Spur Clone for working on THIS project
 ==========================================
 1) Go to your project directory
