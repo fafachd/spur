@@ -1,7 +1,12 @@
 .clear { clear: both; }
-.footer { color: yellow; background-color:blue;}
+.error { color: red; }
+.footer { color: silver; float: left;}
+.footer .links { color: silver; float: left;}
+.footer .copyright { float: left; }
+.header { background-color: red; }
+.header .links { float: left; margin: 11px 0 0 8px; }
+.header .links a { font-weight: bold; padding: 0 7px 0 7px; }
+.links { float: left; }
+.notice { color: green; }
+.profile { background-color: green; float: left; }
 
-.header {background-color: red;}
-.header .links { float: left; margin: 11px 0 0 8px;}
-.header .links a { font-weight: bold; padding: 0 7px 0 7px; border-right: 1px solid #000; }
-.header .links a.last { border: none; }

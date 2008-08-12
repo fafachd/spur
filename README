@@ -29,24 +29,22 @@ NOTES
 Generic controller "pages" created
 "Home" page is pages/index
 
-TODO
-====
-1) Think of more things to do and put them here 
 
-Installation Instructions
-=========================
+New Application Installation Instructions
+=========================================
 1) Clone project
 2) Rename/move
 3) Push to github or whatever source control
 4) Create/modify database.yml for your app
-5) rake db:create
-6) rake db:migrate
-7) rake db:fixtures:load
-8) ?
+5) Change the REST_AUTH_SITE_KEY value in config/initializers/site_keys.rb
+6) Add config/initializers/site_keys.rb to the .gitignore file
+7) rake db:create
+8) rake db:migrate
+9) rake db:fixtures:load
+10) ?
 
-
-Other Notes
-===========
+Misc Notes
+==========
 1) Might have to configure mail settings for your needs for authentication emails to work
 2) Things to replace: index.html.haml
 

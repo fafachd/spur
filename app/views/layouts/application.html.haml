@@ -5,17 +5,22 @@
   %body
     #header
       .header
-        %p Spur
+        %p
+          Spur
         .links
           = link_to 'Home', root_path
-          - if logged_in?
-            = link_to 'Logout', login_path
-            %p
-              = "#{current_user.login}"
-          - else
-            = link_to 'Login', login_path
+          = link_to 'Login', login_path unless logged_in?
+          = link_to 'Admin', admin_path if logged_in? and current_user.is_admin?
+        - if logged_in?
+          .profile
+            = "You are #{current_user.login}"
+            ( 
+            = link_to 'logout', logout_path
+            )
         .clear
-      .clear
+
+      .notice= h(flash[:notice]) if flash[:notice]
+      .error=  h(flash[:error]) if flash[:error]
 
     #body
       .body
@@ -24,7 +29,15 @@
       
     #footer
       .footer
-        %p
-          Footer stuff here
+        .copyright
+          &copy; Footer stuff here &nbsp;
+        .links
+          |
+          = link_to 'About Us', about_path
+          |
+          = link_to 'Contact Us', contact_path
+          |
+          = link_to 'Terms of Service', terms_path
+        .clear
       .clear
       

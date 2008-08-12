@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
     u = find_in_state :first, :active, :conditions => {:login => login} # need to get the salt
     u && u.authenticated?(password) ? u : nil
   end
+  
+  def is_admin?
+    self.is_admin
+  end
 
   protected
     
