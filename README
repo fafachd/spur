@@ -16,19 +16,12 @@ The initial idea is to provide:
 
 Plugins Included
 ================
-- shoulda -> done
-- restful-authentication -> done (but had to rename to restful_authentication)
-- make_resourceful -> done
-- exception_notification -> done
-- haml -> done
-- aasm -> done
-- others?
-
-NOTES
-=====
-Generic controller "pages" created
-"Home" page is pages/index
-
+- shoulda
+- restful-authentication (had to rename to restful_authentication)
+- make_resourceful
+- exception_notification
+- haml
+- aasm
 
 New Application Installation Instructions
 =========================================
@@ -46,5 +39,6 @@ New Application Installation Instructions
 Misc Notes
 ==========
 1) Might have to configure mail settings for your needs for authentication emails to work
-2) Things to replace: index.html.haml
-
+2) "Home" page is pages/index 
+3) Be sure to change REST_AUTH_SITE_KEY in config/initializers/site_keys.rb or you may have the same key as other apps derived from this project.
+ 
