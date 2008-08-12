@@ -8,7 +8,12 @@
         %p Spur
         .links
           = link_to 'Home', root_path
-          = link_to 'Login', login_path
+          - if logged_in?
+            = link_to 'Logout', login_path
+            %p
+              = "#{current_user.login}"
+          - else
+            = link_to 'Login', login_path
         .clear
       .clear
 
