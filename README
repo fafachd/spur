@@ -23,6 +23,18 @@ Plugins Included
 - haml
 - aasm
 
+New Spur Clone for working on THIS project
+==========================================
+1) Go to your project directory
+2) git clone git@github.com:jayshepherd/spur.git
+3) cd spur
+4) git submodule init
+5) git submodule update
+6) Copy or create a database.yml and modify for your environment
+7) rake db:create:all
+8) rake db:migrate
+9) rake test (make sure you have a test database in database.yml)
+
 New Application Installation Instructions
 =========================================
 1) Clone project
@@ -34,11 +46,10 @@ New Application Installation Instructions
 7) rake db:create
 8) rake db:migrate
 9) rake db:fixtures:load
-10) ?
 
 Misc Notes
 ==========
 1) Might have to configure mail settings for your needs for authentication emails to work
 2) "Home" page is pages/index 
-3) Be sure to change REST_AUTH_SITE_KEY in config/initializers/site_keys.rb or you may have the same key as other apps derived from this project.
+3) Be sure to change REST_AUTH_SITE_KEY in config/initializers/site_keys.rb or you may have the same key as other apps derived from this project.  When you do this, it will break the passwords that are already in the users.yml file in test/fixtures, so be prepared to reset their passwords.
  
