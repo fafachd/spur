@@ -12,14 +12,12 @@ class UserMailer < ActionMailer::Base
   end
   
   def forgot_password(user)
-    setup_email(user)
-    @subject += 'You have requested to change your password'
-    @body = "Your password has been reset.\n\nClick the following link to set your new password.\n\n#{SITE}/reset_password/#{user.password_reset_code}"
+    setup_email(user, 'You have requested to change your password')
+    @body[:url] = "#{SITE}/reset_password/#{user.password_reset_code}"
   end
 
   def reset_password(user)
-    setup_email(user)
-    @subject += 'Your password has been reset.'
+    setup_email(user,'Your password has been reset.')
   end
   
   protected
