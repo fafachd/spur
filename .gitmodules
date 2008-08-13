@@ -16,3 +16,6 @@
 [submodule "vendor/plugins/aasm"]
 	path = vendor/plugins/aasm
 	url = git://github.com/rubyist/aasm.git
+[submodule "vendor/plugins/action_mailer_tls"]
+	path = vendor/plugins/action_mailer_tls
+	url = git://github.com/caritos/action_mailer_tls.git

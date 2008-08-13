@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20080812034933
+# Schema version: 20080813030413
 #
 # Table name: users
 #
@@ -18,6 +18,7 @@
 #  state                     :string(255)     default("passive")
 #  deleted_at                :datetime
 #  is_admin                  :boolean(1)
+#  password_reset_code       :string(40)
 #
 
 require 'digest/sha1'
@@ -65,12 +66,42 @@ class User < ActiveRecord::Base
     self.is_admin
   end
 
-  protected
-    
-    def make_activation_code
-        self.deleted_at = nil
-        self.activation_code = self.class.make_token
-    end
+  def forgot_password
+    @forgotten_password = true
+    self.make_password_reset_code
+  end
 
+  def reset_password
+    # First update the password_reset_code before setting the
+    # reset_password flag to avoid duplicate mail notifications.
+    update_attributes(:password_reset_code => nil)
+    @reset_password = nil
+  end
+
+  # Used in user_observer
+  def recently_forgot_password?
+    @forgotten_password
+  end
+
+  # Used in user_observer
+  def recently_reset_password?
+    @reset_password
+  end
+
+  # Used in user_observer
+  def recently_activated?
+    @activated
+  end
+
+  protected
+
+  def make_password_reset_code
+    self.password_reset_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
+  end
+    
+  def make_activation_code
+      self.deleted_at = nil
+      self.activation_code = self.class.make_token
+  end
 
 end

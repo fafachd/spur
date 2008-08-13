@@ -63,6 +63,37 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
   
+  # action to perform when the users clicks forgot_password
+  def forgot_password
+    if request.post?
+      if @user = User.find_by_email(params[:user][:email])
+        @user.forgot_password
+        @user.save
+        redirect_back_or_default('/')
+        flash[:notice] = "A password reset link has been sent to your email address: #{params[:user][:email]}"
+      else
+        flash[:alert] = "Could not find a user with that email address: #{params[:user][:email]}"
+      end
+    end
+  end
+  
+  # action to perform when the user resets the password
+  def reset_password
+    @user = User.find_by_password_reset_code(params[:code])
+    return if @user unless params[:user]
+
+    if ((params[:user][:password] && params[:user][:password_confirmation]))
+      self.current_user = @user # for the next two lines to work
+      current_user.password_confirmation = params[:user][:password_confirmation]
+      current_user.password = params[:user][:password]
+      @user.reset_password
+      flash[:notice] = current_user.save ? "Password reset successfully" : "Unable to reset password"
+      redirect_back_or_default('/')
+    else
+      flash[:alert] = "Password mismatch"
+    end
+  end
+  
   # There's no page here to update or destroy a user.  If you add those, be
   # smart -- make sure you check that the visitor is authorized to do so, that they
   # supply their old password along with a new one to update it, etc.

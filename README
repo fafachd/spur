@@ -22,14 +22,14 @@ Plugins Included
 - exception_notification
 - haml
 - aasm
+- action_mailer_tls (allows sending email through Gmail)
 
 TODO
 ====
-1) Remember Me checkbox
-2) Forgot password
-3) User Maintenance (for user)
-4) Users Maintenance (for admin)
-5) Change password (part of 3/4?)
+1) User Maintenance (for user)
+2) Users Maintenance (for admin)
+3) Change password (part of 3/4?)
+4) Write tests for new code
 
 New Spur Clone for working on THIS project
 ==========================================
@@ -42,6 +42,7 @@ New Spur Clone for working on THIS project
 7) rake db:create:all
 8) rake db:migrate
 9) rake test (make sure you have a test database in database.yml)
+10) Modify config/environments/development.rb with your mailer and constant settings
 
 New Application Installation Instructions
 =========================================
@@ -54,6 +55,8 @@ New Application Installation Instructions
 7) rake db:create
 8) rake db:migrate
 9) rake db:fixtures:load
+10) Modify app/models/user_mailer.rb for your site
+11) Modify config/environments/development.rb with your mailer and constant settings
 
 Misc Notes
 ==========

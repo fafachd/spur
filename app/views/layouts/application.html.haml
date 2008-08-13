@@ -10,6 +10,7 @@
         .links
           = link_to 'Home', root_path
           = link_to 'Login', login_path unless logged_in?
+          = link_to 'Signup', signup_path unless logged_in?
           = link_to 'Admin', admin_path if logged_in? and current_user.is_admin?
         - if logged_in?
           .profile
