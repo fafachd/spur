@@ -154,10 +154,40 @@ class UserTest < ActiveSupport::TestCase
     assert_not_nil users(:quentin).deleted_at
     assert users(:quentin).deleted?
   end
+  
+  def test_should_return_is_admin_true_if_true
+    user = create_user
+    user.is_admin = true
+    assert user.is_admin?
+  end
+
+  def test_should_return_is_admin_false_if_false
+    user = create_user
+    user.is_admin = false
+    assert !user.is_admin?
+  end
+  
+  def test_should_return_is_admin_false_if_nil
+    user = create_user
+    user.is_admin = nil
+    assert !user.is_admin?
+  end
+  
+  def test_should_set_password_reset_code_when_forgot_password
+    user = create_user
+    user.forgot_password
+    assert !user.password_reset_code.blank?
+  end
+
+  def test_should_reset_password_reset_code_when_reset_password
+    user = create_user
+    user.reset_password
+    assert user.password_reset_code.blank?
+  end
 
 protected
   def create_user(options = {})
-    record = User.new({ :login => 'quire', :email => 'quire@example.com', :password => 'quire69', :password_confirmation => 'quire69' }.merge(options))
+    record = User.new({ :login => 'quire', :email => 'quire@example.com', :password => 'quire69', :password_confirmation => 'quire69'}.merge(options))
     record.register! if record.valid?
     record
   end
